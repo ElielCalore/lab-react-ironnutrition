@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import foods from './foods.json';
+import { useState } from 'react';
+import { FoodBox } from './components/FoodBox';
+import { AddFoodForm } from './components/AddFoodForm';
+import { Search } from './components/Search';
+import './app.css';
 
-function App() {
+export function App() {
+  const [allFoods, setAllFoods] = useState(foods);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>
+        <div>
+          <p> FOOD LIST </p>
+          {allFoods.map((currentElement) => {
+            return (
+              <div key={currentElement.name}>
+                <p>{currentElement.name}</p>
+                <img
+                  src={currentElement.image}
+                  alt="imagem"
+                  width={50}
+                  height={50}
+                />
+              </div>
+            );
+          })}
+        </div>
+
+        <div>
+          <div>
+            <h1 className="center">Add Food Entry</h1>
+          </div>
+          <div>
+            <AddFoodForm allFoods={allFoods} setAllFoods={setAllFoods} />
+          </div>
+        </div>
+
+        <h1 className="center">FOOD LIST </h1>
+        <div className="flexBoxGlobal">
+          {allFoods.map((currentElement) => {
+            return (
+              <div key={currentElement.image}>
+                <FoodBox food={currentElement} />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <div>
+        <Search />
+      </div>
+    </>
   );
 }
-
-export default App;

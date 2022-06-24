@@ -1,0 +1,25 @@
+.foodBoxGlobal {
+    border: 1px solid grey;
+    width: 180px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10%;
+    text-align: left;
+}
+
+.foodBoxItem {
+    width: 30px;
+    height: 30px;
+}
+
+.foodBoxName {
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+    text-align: right;
+}
+
+.foodBoxImage {
+    width: 60px;
+    height: 60px;
+}

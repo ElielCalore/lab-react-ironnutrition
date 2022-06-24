@@ -1,0 +1,12 @@
+.formInput {
+    background-color: antiquewhite;
+}
+
+.formLabel {
+    font-size: 24px;
+}
+
+.formGlobal {
+    padding: 10px;
+    margin: 10px;
+}
